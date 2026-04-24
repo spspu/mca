@@ -18,12 +18,10 @@ const SellerEarnings = () => {
   }, []);
 
   return (
-    <div className="bg-light min-vh-100 py-5">
+    <div className="seller-page min-vh-100 py-5">
       <div className="container">
-
         <h2 className="fw-bold mb-4">Seller Earnings</h2>
 
-        {/* TOTAL CARD */}
         <div className="card shadow border-0 rounded-4 mb-4">
           <div className="card-body">
             <h4 className="fw-semibold">
@@ -35,13 +33,11 @@ const SellerEarnings = () => {
           </div>
         </div>
 
-        {/* TABLE */}
         <div className="card shadow border-0 rounded-4">
           <div className="card-body">
             <div className="table-responsive">
-
-              <table className="table table-hover align-middle mb-0">
-                <thead className="table-light">
+              <table className="table theme-table table-hover align-middle mb-0">
+                <thead>
                   <tr>
                     <th>ID</th>
                     <th>Order ID</th>
@@ -59,9 +55,7 @@ const SellerEarnings = () => {
                       <td>{txn.id}</td>
                       <td>{txn.order?.id}</td>
 
-                      <td className="text-dark">
-                        ₹{txn.grossAmount}
-                      </td>
+                      <td>₹{txn.grossAmount}</td>
 
                       <td className="text-danger">
                         ₹{txn.commissionAmount}
@@ -85,7 +79,7 @@ const SellerEarnings = () => {
                         </span>
                       </td>
 
-                      <td className="text-muted">
+                      <td className="theme-muted">
                         {txn.transactionDate}
                       </td>
                     </tr>
@@ -93,19 +87,16 @@ const SellerEarnings = () => {
 
                   {transactions.length === 0 && (
                     <tr>
-                      <td colSpan="7" className="text-center text-muted py-4">
+                      <td colSpan="7" className="text-center theme-muted py-4">
                         No transactions found
                       </td>
                     </tr>
                   )}
-
                 </tbody>
               </table>
-
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );

@@ -34,23 +34,17 @@ const AdminSellers = () => {
   };
 
   return (
-    <div className="bg-light min-vh-100 py-5">
+    <div className="admin-page min-vh-100 py-5">
       <div className="container">
-
         <h2 className="fw-bold mb-4">Seller Verification</h2>
 
-        {message && (
-          <div className="alert alert-success">
-            {message}
-          </div>
-        )}
+        {message && <div className="alert alert-success">{message}</div>}
 
         <div className="card border-0 shadow rounded-4">
           <div className="card-body">
-
             <div className="table-responsive">
-              <table className="table table-hover align-middle mb-0">
-                <thead className="table-light">
+              <table className="table theme-table table-hover align-middle mb-0">
+                <thead>
                   <tr>
                     <th>ID</th>
                     <th>Shop Name</th>
@@ -114,7 +108,7 @@ const AdminSellers = () => {
 
                   {sellers.length === 0 && (
                     <tr>
-                      <td colSpan="7" className="text-center text-muted py-4">
+                      <td colSpan="7" className="text-center theme-muted py-4">
                         No sellers found
                       </td>
                     </tr>
@@ -122,10 +116,8 @@ const AdminSellers = () => {
                 </tbody>
               </table>
             </div>
-
           </div>
         </div>
-
       </div>
     </div>
   );

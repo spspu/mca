@@ -35,105 +35,103 @@ const Register = () => {
   };
 
   return (
-    <div className="bg-light min-vh-100 d-flex align-items-center justify-content-center">
-      <div className="card shadow border-0 rounded-4" style={{ width: "100%", maxWidth: "500px" }}>
-        <div className="card-body p-4">
+    <div className="auth-page">
+      <div className="auth-card" style={{ maxWidth: "500px" }}>
+        <h3 className="fw-bold text-center mb-4">Register</h3>
 
-          <h3 className="fw-bold text-center mb-4">Register</h3>
+        {error && (
+          <div className="alert alert-danger text-center py-2">{error}</div>
+        )}
 
-          {error && (
-            <div className="alert alert-danger text-center py-2">
-              {error}
-            </div>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <input
+              name="name"
+              placeholder="Name"
+              value={form.name}
+              onChange={handleChange}
+              required
+              className="form-control"
+            />
+          </div>
+
+          <div className="mb-3">
+            <input
+              name="email"
+              type="email"
+              placeholder="Email"
+              value={form.email}
+              onChange={handleChange}
+              required
+              className="form-control"
+            />
+          </div>
+
+          <div className="mb-3">
+            <input
+              name="password"
+              type="password"
+              placeholder="Password"
+              value={form.password}
+              onChange={handleChange}
+              required
+              className="form-control"
+            />
+          </div>
+
+          <div className="mb-3">
+            <select
+              name="role"
+              value={form.role}
+              onChange={handleChange}
+              className="form-select"
+            >
+              <option value="CUSTOMER">Customer</option>
+              <option value="SELLER">Seller</option>
+            </select>
+          </div>
+
+          {form.role === "SELLER" && (
+            <>
+              <div className="mb-3">
+                <input
+                  name="shopName"
+                  placeholder="Shop Name"
+                  value={form.shopName}
+                  onChange={handleChange}
+                  required
+                  className="form-control"
+                />
+              </div>
+
+              <div className="mb-3">
+                <input
+                  name="phone"
+                  placeholder="Phone"
+                  value={form.phone}
+                  onChange={handleChange}
+                  required
+                  className="form-control"
+                />
+              </div>
+
+              <div className="mb-3">
+                <input
+                  name="address"
+                  placeholder="Address"
+                  value={form.address}
+                  onChange={handleChange}
+                  required
+                  className="form-control"
+                />
+              </div>
+            </>
           )}
 
-          <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-              <input
-                name="name"
-                placeholder="Name"
-                onChange={handleChange}
-                required
-                className="form-control"
-              />
-            </div>
-
-            <div className="mb-3">
-              <input
-                name="email"
-                type="email"
-                placeholder="Email"
-                onChange={handleChange}
-                required
-                className="form-control"
-              />
-            </div>
-
-            <div className="mb-3">
-              <input
-                name="password"
-                type="password"
-                placeholder="Password"
-                onChange={handleChange}
-                required
-                className="form-control"
-              />
-            </div>
-
-            <div className="mb-3">
-              <select
-                name="role"
-                onChange={handleChange}
-                className="form-select"
-              >
-                <option value="CUSTOMER">Customer</option>
-                <option value="SELLER">Seller</option>
-              </select>
-            </div>
-
-            {form.role === "SELLER" && (
-              <>
-                <div className="mb-3">
-                  <input
-                    name="shopName"
-                    placeholder="Shop Name"
-                    onChange={handleChange}
-                    required
-                    className="form-control"
-                  />
-                </div>
-
-                <div className="mb-3">
-                  <input
-                    name="phone"
-                    placeholder="Phone"
-                    onChange={handleChange}
-                    required
-                    className="form-control"
-                  />
-                </div>
-
-                <div className="mb-3">
-                  <input
-                    name="address"
-                    placeholder="Address"
-                    onChange={handleChange}
-                    required
-                    className="form-control"
-                  />
-                </div>
-              </>
-            )}
-
-            <button
-              type="submit"
-              className="btn btn-success w-100 fw-semibold"
-            >
-              Register
-            </button>
-          </form>
-
-        </div>
+          <button type="submit" className="btn btn-success w-100 fw-semibold">
+            Register
+          </button>
+        </form>
       </div>
     </div>
   );

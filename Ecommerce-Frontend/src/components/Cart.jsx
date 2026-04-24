@@ -105,11 +105,10 @@ const Cart = () => {
   };
 
   return (
-    <div className="bg-light min-vh-100 py-5">
-      <div className="container">
-        <div className="card shadow border-0 rounded-4">
+    <div className="cart-page min-vh-100 py-5">
+      <div className="container-fluid px-4">
+        <div className="cart-theme-card card shadow border-0 rounded-4">
           <div className="card-body p-4">
-
             <h2 className="fw-bold mb-4 border-bottom pb-3">
               Shopping Bag
             </h2>
@@ -120,29 +119,29 @@ const Cart = () => {
               </div>
             ) : (
               <>
-                <ul className="list-group list-group-flush">
+                <ul className="list-group list-group-flush cart-list">
                   {cartItems.map((item) => (
-                    <li
-                      key={item.id}
-                      className="list-group-item py-3"
-                    >
+                    <li key={item.id} className="list-group-item py-3">
                       <div className="row align-items-center">
-
-                        {/* Image + Name */}
                         <div className="col-md-4 d-flex align-items-center gap-3">
                           <img
                             src={item.imageUrl}
                             alt={item.name}
                             className="img-fluid rounded"
-                            style={{ width: "80px", height: "80px", objectFit: "cover" }}
+                            style={{
+                              width: "80px",
+                              height: "80px",
+                              objectFit: "cover",
+                              backgroundColor: "#fff",
+                            }}
                           />
+
                           <div>
-                            <small className="text-muted">{item.brand}</small>
+                            <small className="theme-muted">{item.brand}</small>
                             <h6 className="mb-0 fw-semibold">{item.name}</h6>
                           </div>
                         </div>
 
-                        {/* Quantity */}
                         <div className="col-md-3 text-center">
                           <div className="btn-group">
                             <button
@@ -168,12 +167,10 @@ const Cart = () => {
                           </div>
                         </div>
 
-                        {/* Price */}
                         <div className="col-md-2 text-center fw-bold">
                           ₹{item.price * item.quantity}
                         </div>
 
-                        {/* Remove */}
                         <div className="col-md-3 text-end">
                           <button
                             onClick={() => handleRemoveFromCart(item.id)}
@@ -182,13 +179,11 @@ const Cart = () => {
                             Remove
                           </button>
                         </div>
-
                       </div>
                     </li>
                   ))}
                 </ul>
 
-                {/* Total + Checkout */}
                 <div className="d-flex flex-column align-items-end mt-4 border-top pt-3">
                   <h4 className="fw-bold">Total: ₹{totalPrice}</h4>
 

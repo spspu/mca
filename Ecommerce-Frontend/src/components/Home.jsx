@@ -103,26 +103,21 @@ const Home = ({ selectedCategory }) => {
 
   if (isError) {
     return (
-      <div className="bg-light min-vh-100 d-flex align-items-center justify-content-center">
-        <img
-          src={unplugged}
-          alt="Error"
-          style={{ width: "96px", height: "96px" }}
-        />
+      <div className="home-page min-vh-100 d-flex align-items-center justify-content-center">
+        <img src={unplugged} alt="Error" style={{ width: "96px", height: "96px" }} />
       </div>
     );
   }
 
   return (
-    <div className="bg-light min-vh-100 py-5">
+    <div className="home-page min-vh-100 py-5">
       <div className="container-fluid px-4">
 
-        {/* Homepage Banner */}
         <div className="mb-4">
           {homepageContent
             .filter((item) => item.type === "BANNER")
             .map((item) => (
-              <div key={item.id} className="card border-0 shadow mb-4 rounded-4">
+              <div key={item.id} className="theme-card card border-0 shadow mb-4 rounded-4">
                 <div className="card-body text-center p-4">
                   {item.imageUrl && (
                     <img
@@ -133,8 +128,8 @@ const Home = ({ selectedCategory }) => {
                     />
                   )}
 
-                  <h2 className="fw-bold text-dark">{item.title}</h2>
-                  <p className="text-muted mb-0">{item.subtitle}</p>
+                  <h2 className="fw-bold">{item.title}</h2>
+                  <p className="theme-muted mb-0">{item.subtitle}</p>
                 </div>
               </div>
             ))}
@@ -144,7 +139,7 @@ const Home = ({ selectedCategory }) => {
               .filter((item) => item.type !== "BANNER")
               .map((item) => (
                 <div key={item.id} className="col-md-4">
-                  <div className="card h-100 border-0 shadow rounded-4">
+                  <div className="theme-card card h-100 border-0 shadow rounded-4">
                     <div className="card-body">
                       {item.imageUrl && (
                         <img
@@ -156,7 +151,7 @@ const Home = ({ selectedCategory }) => {
                       )}
 
                       <h5 className="fw-semibold">{item.title}</h5>
-                      <p className="text-muted mb-0">{item.subtitle}</p>
+                      <p className="theme-muted mb-0">{item.subtitle}</p>
                     </div>
                   </div>
                 </div>
@@ -164,73 +159,33 @@ const Home = ({ selectedCategory }) => {
           </div>
         </div>
 
-        {/* Filters */}
-        <div className="card border-0 shadow mb-4 rounded-4">
+        <div className="theme-card card border-0 shadow mb-4 rounded-4">
           <div className="card-body">
             <div className="row g-3 align-items-center">
 
               <div className="col-md-6 col-lg">
-                <input
-                  className="form-control"
-                  name="keyword"
-                  placeholder="Search"
-                  value={filters.keyword}
-                  onChange={handleFilterChange}
-                />
+                <input className="form-control" name="keyword" placeholder="Search" value={filters.keyword} onChange={handleFilterChange} />
               </div>
 
               <div className="col-md-6 col-lg">
-                <input
-                  className="form-control"
-                  name="category"
-                  placeholder="Category"
-                  value={filters.category}
-                  onChange={handleFilterChange}
-                />
+                <input className="form-control" name="category" placeholder="Category" value={filters.category} onChange={handleFilterChange} />
               </div>
 
               <div className="col-md-6 col-lg">
-                <input
-                  className="form-control"
-                  name="brand"
-                  placeholder="Brand"
-                  value={filters.brand}
-                  onChange={handleFilterChange}
-                />
+                <input className="form-control" name="brand" placeholder="Brand" value={filters.brand} onChange={handleFilterChange} />
               </div>
 
               <div className="col-md-6 col-lg">
-                <input
-                  className="form-control"
-                  name="minPrice"
-                  type="number"
-                  placeholder="Min Price"
-                  value={filters.minPrice}
-                  onChange={handleFilterChange}
-                />
+                <input className="form-control" name="minPrice" type="number" placeholder="Min Price" value={filters.minPrice} onChange={handleFilterChange} />
               </div>
 
               <div className="col-md-6 col-lg">
-                <input
-                  className="form-control"
-                  name="maxPrice"
-                  type="number"
-                  placeholder="Max Price"
-                  value={filters.maxPrice}
-                  onChange={handleFilterChange}
-                />
+                <input className="form-control" name="maxPrice" type="number" placeholder="Max Price" value={filters.maxPrice} onChange={handleFilterChange} />
               </div>
 
               <div className="col-md-6 col-lg">
-                <div className="form-check border rounded px-5 py-2 bg-white">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    name="inStock"
-                    checked={filters.inStock}
-                    onChange={handleFilterChange}
-                    id="inStock"
-                  />
+                <div className="theme-check form-check border rounded px-5 py-2">
+                  <input className="form-check-input" type="checkbox" name="inStock" checked={filters.inStock} onChange={handleFilterChange} id="inStock" />
                   <label className="form-check-label" htmlFor="inStock">
                     Stock
                   </label>
@@ -238,10 +193,7 @@ const Home = ({ selectedCategory }) => {
               </div>
 
               <div className="col-md-6 col-lg">
-                <button
-                  className="btn btn-primary w-100 fw-semibold"
-                  onClick={applyFilters}
-                >
+                <button className="btn btn-primary w-100 fw-semibold" onClick={applyFilters}>
                   Filter
                 </button>
               </div>
@@ -250,13 +202,9 @@ const Home = ({ selectedCategory }) => {
           </div>
         </div>
 
-        {/* Products */}
         {filteredProducts.length === 0 ? (
-          <div
-            className="d-flex align-items-center justify-content-center"
-            style={{ minHeight: "300px" }}
-          >
-            <h2 className="fw-bold text-secondary">No Products Available</h2>
+          <div className="d-flex align-items-center justify-content-center" style={{ minHeight: "300px" }}>
+            <h2 className="fw-bold theme-muted">No Products Available</h2>
           </div>
         ) : (
           <div className="row g-4">
@@ -266,24 +214,23 @@ const Home = ({ selectedCategory }) => {
               return (
                 <div key={id} className="col-sm-6 col-md-4 col-lg-3">
                   <div
-                    className={`card h-100 border-0 shadow rounded-4 ${
-                      productAvailable ? "bg-white" : "bg-secondary-subtle"
+                    className={`product-theme-card card h-100 border-0 shadow rounded-4 ${
+                      !productAvailable ? "product-disabled" : ""
                     }`}
                   >
-                    <Link
-                      to={`/product/${id}`}
-                      className="text-decoration-none text-dark"
-                    >
-                      <img
-                        src={imageUrl}
-                        alt={name}
-                        className="card-img-top p-2"
-                        style={{ height: "180px", objectFit: "cover" }}
-                      />
+                    <Link to={`/product/${id}`} className="text-decoration-none product-link">
+                      <div className="product-img-box">
+                        <img
+                          src={imageUrl}
+                          alt={name}
+                          className="card-img-top p-2"
+                          style={{ height: "180px", objectFit: "cover" }}
+                        />
+                      </div>
 
                       <div className="card-body d-flex flex-column">
                         <h5 className="fw-bold text-uppercase">{name}</h5>
-                        <p className="text-muted fst-italic">~ {brand}</p>
+                        <p className="theme-muted fst-italic">~ {brand}</p>
 
                         <hr />
 

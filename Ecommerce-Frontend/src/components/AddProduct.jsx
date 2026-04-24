@@ -16,8 +16,12 @@ const AddProduct = () => {
   const [image, setImage] = useState(null);
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setProduct({ ...product, [name]: value });
+    const { name, value, type, checked } = e.target;
+
+    setProduct({
+      ...product,
+      [name]: type === "checkbox" ? checked : value,
+    });
   };
 
   const handleImageChange = (e) => {
@@ -47,15 +51,17 @@ const AddProduct = () => {
   };
 
   return (
-    <div className="bg-light min-vh-100 pt-5 px-3">
+    <div className="seller-page min-vh-100 py-5 px-3">
       <div className="container">
-        <div className="card shadow border-0 rounded-4 mx-auto" style={{ maxWidth: "900px" }}>
+        <div
+          className="card shadow border-0 rounded-4 mx-auto"
+          style={{ maxWidth: "900px" }}
+        >
           <div className="card-body p-4">
-            <h2 className="fw-bold mb-4 text-dark">Add Product</h2>
+            <h2 className="fw-bold mb-4">Add Product</h2>
 
             <form onSubmit={submitHandler}>
               <div className="row g-3">
-
                 <div className="col-md-6">
                   <label className="form-label fw-semibold">Name</label>
                   <input
@@ -81,7 +87,9 @@ const AddProduct = () => {
                 </div>
 
                 <div className="col-12">
-                  <label className="form-label fw-semibold">Description</label>
+                  <label className="form-label fw-semibold">
+                    Description
+                  </label>
                   <input
                     type="text"
                     name="description"
@@ -135,7 +143,9 @@ const AddProduct = () => {
                 </div>
 
                 <div className="col-md-6">
-                  <label className="form-label fw-semibold">Release Date</label>
+                  <label className="form-label fw-semibold">
+                    Release Date
+                  </label>
                   <input
                     type="date"
                     name="releaseDate"
@@ -158,28 +168,27 @@ const AddProduct = () => {
                   <div className="form-check">
                     <input
                       type="checkbox"
+                      name="productAvailable"
                       checked={product.productAvailable}
-                      onChange={(e) =>
-                        setProduct({
-                          ...product,
-                          productAvailable: e.target.checked,
-                        })
-                      }
+                      onChange={handleInputChange}
                       className="form-check-input"
                       id="productAvailable"
                     />
-                    <label className="form-check-label" htmlFor="productAvailable">
+
+                    <label
+                      className="form-check-label"
+                      htmlFor="productAvailable"
+                    >
                       Product Available
                     </label>
                   </div>
                 </div>
 
                 <div className="col-12">
-                  <button type="submit" className="btn btn-primary w-100 fw-semibold">
+                  <button className="btn btn-primary w-100 fw-semibold">
                     Submit
                   </button>
                 </div>
-
               </div>
             </form>
           </div>

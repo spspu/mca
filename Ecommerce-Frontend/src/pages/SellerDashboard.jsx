@@ -21,18 +21,16 @@ const SellerDashboard = () => {
 
   if (error) {
     return (
-      <div className="bg-light min-vh-100 d-flex align-items-center justify-content-center">
-        <div className="alert alert-danger text-center shadow">
-          {error}
-        </div>
+      <div className="seller-page min-vh-100 d-flex align-items-center justify-content-center">
+        <div className="alert alert-danger text-center shadow">{error}</div>
       </div>
     );
   }
 
   if (!seller) {
     return (
-      <div className="bg-light min-vh-100 d-flex align-items-center justify-content-center">
-        <h4 className="fw-semibold text-secondary">
+      <div className="seller-page min-vh-100 d-flex align-items-center justify-content-center">
+        <h4 className="fw-semibold theme-muted">
           Loading seller dashboard...
         </h4>
       </div>
@@ -40,16 +38,12 @@ const SellerDashboard = () => {
   }
 
   return (
-    <div className="bg-light min-vh-100 py-5">
+    <div className="seller-page min-vh-100 py-5">
       <div className="container" style={{ maxWidth: "700px" }}>
-
-        <h2 className="fw-bold text-center mb-4">
-          Seller Dashboard
-        </h2>
+        <h2 className="fw-bold text-center mb-4">Seller Dashboard</h2>
 
         <div className="card shadow border-0 rounded-4">
           <div className="card-body p-4">
-
             <h5 className="fw-semibold mb-3">
               Shop Name:{" "}
               <span className="text-primary">{seller.shopName}</span>
@@ -78,7 +72,6 @@ const SellerDashboard = () => {
               </span>
             </h5>
 
-            {/* STATUS ALERTS */}
             {seller.status === "PENDING" && (
               <div className="alert alert-warning">
                 Your seller account is waiting for admin approval.
@@ -102,37 +95,23 @@ const SellerDashboard = () => {
               </div>
             )}
 
-            {/* ACTION BUTTONS */}
             {seller.status === "APPROVED" && (
               <div className="d-flex flex-wrap justify-content-center gap-3 mt-4">
-
-                <Link
-                  to="/add_product"
-                  className="btn btn-primary"
-                >
+                <Link to="/add_product" className="btn btn-primary">
                   Add Product
                 </Link>
 
-                <Link
-                  to="/seller/products"
-                  className="btn btn-success"
-                >
+                <Link to="/seller/products" className="btn btn-success">
                   My Products
                 </Link>
 
-                <Link
-                  to="/seller/earnings"
-                  className="btn btn-info text-white"
-                >
+                <Link to="/seller/earnings" className="btn btn-info text-white">
                   Earnings
                 </Link>
-
               </div>
             )}
-
           </div>
         </div>
-
       </div>
     </div>
   );

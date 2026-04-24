@@ -30,16 +30,11 @@ const SellerProducts = () => {
   };
 
   return (
-    <div className="bg-light min-vh-100 py-5">
+    <div className="seller-page min-vh-100 py-5">
       <div className="container-fluid px-4">
-
         <h2 className="fw-bold mb-4">My Products</h2>
 
-        {message && (
-          <div className="alert alert-info">
-            {message}
-          </div>
-        )}
+        {message && <div className="alert alert-info">{message}</div>}
 
         <Link to="/add_product" className="btn btn-primary mb-4 fw-semibold">
           Add Product
@@ -48,9 +43,8 @@ const SellerProducts = () => {
         <div className="card shadow border-0 rounded-4">
           <div className="card-body">
             <div className="table-responsive">
-
-              <table className="table table-hover align-middle mb-0">
-                <thead className="table-light">
+              <table className="table theme-table table-hover align-middle mb-0">
+                <thead>
                   <tr>
                     <th>ID</th>
                     <th>Image</th>
@@ -78,6 +72,7 @@ const SellerProducts = () => {
                             width: "56px",
                             height: "56px",
                             objectFit: "cover",
+                            backgroundColor: "#fff",
                           }}
                         />
                       </td>
@@ -85,19 +80,13 @@ const SellerProducts = () => {
                       <td className="fw-semibold">{product.name}</td>
                       <td>{product.brand}</td>
                       <td>{product.category}</td>
-
-                      <td className="fw-semibold text-success">
-                        ₹{product.price}
-                      </td>
-
+                      <td className="fw-semibold text-success">₹{product.price}</td>
                       <td>{product.stockQuantity}</td>
 
                       <td>
                         <span
                           className={`badge ${
-                            product.productAvailable
-                              ? "bg-success"
-                              : "bg-danger"
+                            product.productAvailable ? "bg-success" : "bg-danger"
                           }`}
                         >
                           {product.productAvailable ? "Yes" : "No"}
@@ -126,18 +115,16 @@ const SellerProducts = () => {
 
                   {products.length === 0 && (
                     <tr>
-                      <td colSpan="9" className="text-center text-muted py-4">
+                      <td colSpan="9" className="text-center theme-muted py-4">
                         No products found
                       </td>
                     </tr>
                   )}
                 </tbody>
               </table>
-
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );

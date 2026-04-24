@@ -1,8 +1,243 @@
-.dark-theme{
-    --root_background: #1f1f1f;}
-    .light-theme{
-        --root_background: white;
-    }
-:root{
-    background-color: #1f1f1f;
+/* ================= THEME VARIABLES ================= */
+
+.light-theme {
+  --page-bg: #f5f7fb;
+  --page-bg-2: #ffffff;
+  --navbar-bg: #ffffff;
+  --card-bg: #ffffff;
+  --card-bg-2: #f8f9fa;
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --border-color: #e5e7eb;
+  --input-bg: #ffffff;
+  --input-text: #111827;
+  --shadow-color: rgba(0, 0, 0, 0.12);
+}
+
+.dark-theme {
+  --page-bg: #0b0f19;
+  --page-bg-2: #111827;
+  --navbar-bg: #050505;
+  --card-bg: #0f172a;
+  --card-bg-2: #111827;
+  --text-main: #f8fafc;
+  --text-muted: #cbd5e1;
+  --border-color: #273449;
+  --input-bg: #111827;
+  --input-text: #f8fafc;
+  --shadow-color: rgba(0, 0, 0, 0.55);
+}
+
+/* ================= GLOBAL ================= */
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+  background: var(--page-bg) !important;
+  color: var(--text-main) !important;
+}
+
+body {
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* ================= LAYOUT ================= */
+
+.app-wrapper,
+.app-main,
+.home-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(13, 110, 253, 0.12), transparent 28%),
+    linear-gradient(135deg, var(--page-bg), var(--page-bg-2)) !important;
+  color: var(--text-main) !important;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  background: var(--navbar-bg) !important;
+  color: var(--text-main) !important;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link,
+.navbar span,
+.navbar i,
+.navbar button {
+  color: var(--text-main) !important;
+}
+
+.navbar .nav-link:hover {
+  color: #0d6efd !important;
+}
+
+/* ================= INPUT ================= */
+
+.form-control {
+  background-color: var(--input-bg) !important;
+  color: var(--input-text) !important;
+  border-color: var(--border-color) !important;
+}
+
+.form-control::placeholder {
+  color: var(--text-muted) !important;
+}
+
+/* ================= CARD ================= */
+
+.card {
+  background: var(--card-bg) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 12px 30px var(--shadow-color) !important;
+}
+
+.card-body {
+  background: transparent !important;
+}
+
+/* ================= PRODUCT ================= */
+
+.product-theme-card:hover {
+  transform: translateY(-4px);
+}
+
+.product-img-box {
+  background: #ffffff;
+  border-radius: 1rem 1rem 0 0;
+  overflow: hidden;
+}
+
+.product-disabled {
+  opacity: 0.65;
+}
+
+/* ================= TEXT ================= */
+
+.theme-muted {
+  color: var(--text-muted) !important;
+}
+
+/* ================= DROPDOWN ================= */
+
+.dropdown-menu,
+.list-group-item {
+  background: var(--card-bg) !important;
+  color: var(--text-main) !important;
+  border-color: var(--border-color) !important;
+}
+
+.dropdown-item:hover,
+.list-group-item:hover {
+  background: var(--card-bg-2) !important;
+}
+
+/* ================= BUTTON ================= */
+
+.btn-primary {
+  background: linear-gradient(135deg, #0d6efd, #2563eb) !important;
+  border: none !important;
+}
+
+.btn-danger {
+  border: none !important;
+}
+
+/* ================= CART ================= */
+
+.cart-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(13, 110, 253, 0.12), transparent 28%),
+    linear-gradient(135deg, var(--page-bg), var(--page-bg-2)) !important;
+}
+
+.cart-list .list-group-item {
+  background: transparent !important;
+  border-color: var(--border-color) !important;
+}
+
+/* ================= AUTH (LOGIN/REGISTER) ================= */
+
+.auth-page {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 90px 16px 40px;
+
+  background:
+    radial-gradient(circle at top left, rgba(13, 110, 253, 0.16), transparent 30%),
+    linear-gradient(135deg, var(--page-bg), var(--page-bg-2)) !important;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  background: var(--card-bg) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 20px 50px var(--shadow-color) !important;
+}
+
+.form-select {
+  background-color: var(--input-bg) !important;
+  color: var(--input-text) !important;
+  border-color: var(--border-color) !important;
+}
+
+.admin-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(13, 110, 253, 0.12), transparent 28%),
+    linear-gradient(135deg, var(--page-bg), var(--page-bg-2)) !important;
+  color: var(--text-main) !important;
+}
+
+.theme-table {
+  --bs-table-bg: transparent !important;
+  --bs-table-color: var(--text-main) !important;
+  --bs-table-border-color: var(--border-color) !important;
+  --bs-table-hover-bg: var(--card-bg-2) !important;
+  --bs-table-hover-color: var(--text-main) !important;
+  color: var(--text-main) !important;
+}
+
+.theme-table thead th {
+  background: var(--card-bg-2) !important;
+  color: var(--text-main) !important;
+  border-color: var(--border-color) !important;
+}
+
+.theme-table tbody td {
+  background: transparent !important;
+  color: var(--text-main) !important;
+  border-color: var(--border-color) !important;
+}
+
+.seller-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(13, 110, 253, 0.12), transparent 28%),
+    linear-gradient(135deg, var(--page-bg), var(--page-bg-2)) !important;
+  color: var(--text-main) !important;
+}
+
+.product-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(13, 110, 253, 0.12), transparent 28%),
+    linear-gradient(135deg, var(--page-bg), var(--page-bg-2)) !important;
+  color: var(--text-main) !important;
+}
+
+.product-detail-img-box {
+  background: #ffffff;
+  overflow: hidden;
 }

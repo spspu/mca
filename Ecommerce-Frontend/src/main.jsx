@@ -8,6 +8,7 @@ import "./index.css";
 import App from "./App.jsx";
 import { AppProvider } from "./context/Context.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

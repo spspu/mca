@@ -74,21 +74,15 @@ const AdminHomepage = () => {
   };
 
   return (
-    <div className="bg-light min-vh-100 py-5">
+    <div className="admin-page min-vh-100 py-5">
       <div className="container">
-
         <h2 className="fw-bold mb-4">Admin Homepage Editor</h2>
 
-        {message && (
-          <div className="alert alert-success">
-            {message}
-          </div>
-        )}
+        {message && <div className="alert alert-success">{message}</div>}
 
         <form onSubmit={addContent} className="card border-0 shadow rounded-4 mb-4">
           <div className="card-body">
             <div className="row g-3">
-
               <div className="col-md-6">
                 <select
                   name="type"
@@ -187,7 +181,6 @@ const AdminHomepage = () => {
                   Add Content
                 </button>
               </div>
-
             </div>
           </div>
         </form>
@@ -195,8 +188,8 @@ const AdminHomepage = () => {
         <div className="card border-0 shadow rounded-4">
           <div className="card-body">
             <div className="table-responsive">
-              <table className="table table-hover align-middle mb-0">
-                <thead className="table-light">
+              <table className="table theme-table table-hover align-middle mb-0">
+                <thead>
                   <tr>
                     <th>ID</th>
                     <th>Type</th>
@@ -214,6 +207,7 @@ const AdminHomepage = () => {
                       <td>{item.id}</td>
                       <td>{item.type}</td>
                       <td>{item.title}</td>
+
                       <td>
                         {item.imageUrl && (
                           <img
@@ -224,11 +218,14 @@ const AdminHomepage = () => {
                               width: "80px",
                               height: "50px",
                               objectFit: "cover",
+                              backgroundColor: "#fff",
                             }}
                           />
                         )}
                       </td>
+
                       <td>{item.positionOrder}</td>
+
                       <td>
                         <span
                           className={`badge ${
@@ -238,6 +235,7 @@ const AdminHomepage = () => {
                           {item.active ? "Yes" : "No"}
                         </span>
                       </td>
+
                       <td>
                         <div className="d-flex gap-2">
                           {item.active ? (
@@ -269,7 +267,7 @@ const AdminHomepage = () => {
 
                   {contents.length === 0 && (
                     <tr>
-                      <td colSpan="7" className="text-center text-muted py-4">
+                      <td colSpan="7" className="text-center theme-muted py-4">
                         No homepage content found
                       </td>
                     </tr>
@@ -279,7 +277,6 @@ const AdminHomepage = () => {
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );
