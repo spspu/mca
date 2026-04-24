@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-
 const Login = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -80,9 +79,35 @@ const Login = () => {
             </button>
           </form>
 
+          <div className="mt-3 text-center">
+
+            <div className="mb-2">
+              <button
+                type="button"
+                className="btn btn-link p-0 text-decoration-none"
+                onClick={() => navigate("/forgot-password")}
+              >
+                Forgot Password?
+              </button>
+            </div>
+
+            <div>
+              <span className="text-muted">New User? </span>
+              <button
+                type="button"
+                className="btn btn-link p-0 text-decoration-none fw-semibold"
+                onClick={() => navigate("/register")}
+              >
+                Register here
+              </button>
+            </div>
+
+          </div>
+
         </div>
       </div>
     </div>
+    
   );
 };
 

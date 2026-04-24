@@ -137,11 +137,10 @@ const Product = () => {
                 <div className="mt-4">
                   {role === "CUSTOMER" && (
                     <button
-                      className={`btn px-4 py-2 fw-semibold ${
-                        product.productAvailable
+                      className={`btn px-4 py-2 fw-semibold ${product.productAvailable
                           ? "btn-primary"
                           : "btn-secondary"
-                      }`}
+                        }`}
                       onClick={handleAddToCart}
                       disabled={!product.productAvailable}
                     >
@@ -171,7 +170,25 @@ const Product = () => {
 
                   {!role && (
                     <div className="alert alert-warning mt-3">
-                      Please login as CUSTOMER to add product into cart.
+                      <p className="mb-3">
+                        Please login as CUSTOMER to add product into cart.
+                      </p>
+
+                      <div className="d-flex d-md-none gap-2">
+                        <button
+                          className="btn btn-primary w-50"
+                          onClick={() => navigate("/login")}
+                        >
+                          Login
+                        </button>
+
+                        <button
+                          className="btn btn-success w-50"
+                          onClick={() => navigate("/register")}
+                        >
+                          Register
+                        </button>
+                      </div>
                     </div>
                   )}
                 </div>

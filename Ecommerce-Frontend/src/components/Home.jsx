@@ -29,6 +29,23 @@ const Home = ({ selectedCategory }) => {
     }
   };
 
+  const addImagesToProducts = async (productList) => {
+    return await Promise.all(
+      productList.map(async (product) => {
+        try {
+          const response = await api.get(`/product/${product.id}/image`, {
+            responseType: "blob",
+          });
+
+          const imageUrl = URL.createObjectURL(response.data);
+          return { ...product, imageUrl };
+        } catch (error) {
+          return { ...product, imageUrl: "" };
+        }
+      })
+    );
+  };
+
   useEffect(() => {
     loadHomepageContent();
   }, []);
@@ -42,26 +59,12 @@ const Home = ({ selectedCategory }) => {
 
   useEffect(() => {
     if (data && data.length > 0) {
-      const fetchImagesAndUpdateProducts = async () => {
-        const updatedProducts = await Promise.all(
-          data.map(async (product) => {
-            try {
-              const response = await api.get(`/product/${product.id}/image`, {
-                responseType: "blob",
-              });
-
-              const imageUrl = URL.createObjectURL(response.data);
-              return { ...product, imageUrl };
-            } catch (error) {
-              return { ...product, imageUrl: "placeholder-image-url" };
-            }
-          })
-        );
-
+      const loadProductsWithImages = async () => {
+        const updatedProducts = await addImagesToProducts(data);
         setProducts(updatedProducts);
       };
 
-      fetchImagesAndUpdateProducts();
+      loadProductsWithImages();
     }
   }, [data]);
 
@@ -87,7 +90,8 @@ const Home = ({ selectedCategory }) => {
         },
       });
 
-      setProducts(response.data);
+      const filteredProductsWithImages = await addImagesToProducts(response.data);
+      setProducts(filteredProductsWithImages);
     } catch (error) {
       console.error("Error applying filters:", error);
     }
@@ -100,7 +104,11 @@ const Home = ({ selectedCategory }) => {
   if (isError) {
     return (
       <div className="bg-light min-vh-100 d-flex align-items-center justify-content-center">
-        <img src={unplugged} alt="Error" style={{ width: "96px", height: "96px" }} />
+        <img
+          src={unplugged}
+          alt="Error"
+          style={{ width: "96px", height: "96px" }}
+        />
       </div>
     );
   }
@@ -230,7 +238,10 @@ const Home = ({ selectedCategory }) => {
               </div>
 
               <div className="col-md-6 col-lg">
-                <button className="btn btn-primary w-100 fw-semibold" onClick={applyFilters}>
+                <button
+                  className="btn btn-primary w-100 fw-semibold"
+                  onClick={applyFilters}
+                >
                   Filter
                 </button>
               </div>
@@ -241,7 +252,10 @@ const Home = ({ selectedCategory }) => {
 
         {/* Products */}
         {filteredProducts.length === 0 ? (
-          <div className="d-flex align-items-center justify-content-center" style={{ minHeight: "300px" }}>
+          <div
+            className="d-flex align-items-center justify-content-center"
+            style={{ minHeight: "300px" }}
+          >
             <h2 className="fw-bold text-secondary">No Products Available</h2>
           </div>
         ) : (
@@ -256,7 +270,10 @@ const Home = ({ selectedCategory }) => {
                       productAvailable ? "bg-white" : "bg-secondary-subtle"
                     }`}
                   >
-                    <Link to={`/product/${id}`} className="text-decoration-none text-dark">
+                    <Link
+                      to={`/product/${id}`}
+                      className="text-decoration-none text-dark"
+                    >
                       <img
                         src={imageUrl}
                         alt={name}

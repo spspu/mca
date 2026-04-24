@@ -9,6 +9,8 @@ import UpdateProduct from "./components/UpdateProduct";
 
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 import SellerDashboard from "./pages/SellerDashboard";
@@ -23,17 +25,17 @@ function App() {
   return (
     <BrowserRouter>
       <div className="container-fluid bg-light text-dark min-vh-100 p-0">
-        
         <Navbar />
 
         <main className="container pt-5 mt-4">
           <Routes>
-
             {/* PUBLIC */}
             <Route path="/" element={<Home />} />
             <Route path="/product/:id" element={<Product />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/password/:id" element={<ResetPassword />} />
             <Route path="/unauthorized" element={<Unauthorized />} />
 
             {/* CUSTOMER */}
@@ -119,7 +121,6 @@ function App() {
                 </ProtectedRoute>
               }
             />
-
           </Routes>
         </main>
       </div>

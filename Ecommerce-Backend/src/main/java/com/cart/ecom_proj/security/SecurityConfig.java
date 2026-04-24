@@ -42,7 +42,13 @@ public class SecurityConfig {
                         .requestMatchers("/h2-console/**").permitAll()
 
                         // auth APIs
-                        .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers(
+                        		"/api/auth/**",
+                        	    "/api/forgot-password",
+                        	    "/api/reset-password",
+                        	    "/swagger-ui/**",
+                        	    "/v3/api-docs/**"
+                        		).permitAll()
 
                         // public product APIs
                         .requestMatchers("/api/products").permitAll()
