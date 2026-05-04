@@ -1,3 +1,6 @@
+# Multi-Vendor E-commerce System
+
+A full-stack **Multi-Vendor E-commerce System** built using **ReactJS** for frontend and **Spring Boot** for backend.
 
 ## Tech Stack
 
@@ -42,21 +45,17 @@
 - Role-based access control
 
 ---
-
+```
 ## Project Structure
 
-```text
 Multivendor-Ecommerce-System/
 │
 ├── Ecommerce-Backend/
 ├── Ecommerce-Frontend/
 │
 └── README.md
-
-# Multi-Vendor E-commerce System
-
-A full-stack **Multi-Vendor E-commerce System** built using **ReactJS** for frontend and **Spring Boot** for backend.
-
+```
+---
 ## Project Screenshots
 
 ### 1. Home Page
