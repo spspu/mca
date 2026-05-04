@@ -1,16 +1,102 @@
 # Multi-Vendor E-commerce System
 
-A full-stack **Multi-Vendor E-commerce System** built using **ReactJS** for the frontend and **Spring Boot** for the backend. This project allows customers, sellers, and admins to interact through a role-based platform.
+A full-stack **Multi-Vendor E-commerce System** built using **ReactJS** for frontend and **Spring Boot** for backend.
+
+## Project Screenshots
+
+### 1. Home Page
+
+![Home Page](assets/home.jpeg)
+
+### 2. Dark Theme Home Page
+
+![Dark Theme Home Page](assets/home-dark.jpeg)
+
+### 3. Login Page
+
+![Login Page](assets/login.jpeg)
+
+### 4. Customer Register
+
+![Customer Register](assets/customer-register.jpeg)
+
+### 5. Seller Register
+
+![Seller Register](assets/seller-register.jpeg)
+
+### 6. Seller Verification
+
+![Seller Verification](assets/seller-verification.jpeg)
+
+### 7. Admin Approved Seller
+
+![Admin Approved Seller](assets/admin-approved-seller.jpeg)
+
+### 8. Admin Homepage Edit
+
+![Admin Homepage Edit](assets/admin-homepage-edit.jpeg)
+
+### 9. Seller Listed Products
+
+![Seller Listed Products](assets/seller-listed-products.jpeg)
+
+### 10. Seller Update Product
+
+![Seller Update Product](assets/seller-update-product.jpeg)
+
+### 11. Customer Adding Product in Cart
+
+![Customer Adding Product in Cart](assets/customer-adding-product-in-cart.jpeg)
+
+### 12. Razorpay Payment Gateway
+
+![Razorpay Payment Gateway](assets/razorpay-payment-gateway.png)
+
+### 13. Razorpay Payment Option
+
+![Razorpay Payment Option](assets/razorpay-payment-option.png)
+
+### 14. Razorpay Payment Processing
+
+![Razorpay Payment Processing](assets/razorpay-payment-processing.png)
+
+### 15. Razorpay Payment ID Generated
+
+![Razorpay Payment ID Generated](assets/razorpay-paymentid-generated.png)
+
+### 16. Website Payment Successful Done
+
+![Website Payment Successful Done](assets/website-payment-successfull-done.png)
+
+### 17. Send Password Reset Link
+
+![Send Password Reset Link](assets/send-password-reset-link.jpeg)
+
+### 18. Password Reset Link Received
+
+![Password Reset Link Received](assets/password-reset-link-recieved.png)
+
+### 19. Password Reset Window
+
+![Password Reset Window](assets/password-reset-window.jpeg)
+
+### 20. Seller Email Notification After Approved
+
+![Seller Email Notification After Approved](assets/seller-email-notify-after-approved.png)
+
+---
 
 ## Tech Stack
 
-**Frontend**
+### Frontend
+
 - ReactJS
 - Bootstrap
 - Axios
 - React Router
 
-**Backend**
+### Backend
+
 - Java
 - Spring Boot
 - Spring Security
@@ -18,11 +104,14 @@ A full-stack **Multi-Vendor E-commerce System** built using **ReactJS** for the 
 - MySQL / H2 Database
 - Maven
 
-**Tools**
+### Tools
+
 - Postman
 - Git & GitHub
 - VS Code
 - STS / Eclipse
+
+---
 
 ## Main Features
 
@@ -39,22 +128,15 @@ A full-stack **Multi-Vendor E-commerce System** built using **ReactJS** for the 
 - Light and dark theme UI
 - Role-based access control
 
+---
+
 ## Project Structure
 
 ```text
 Multivendor-Ecommerce-System/
 │
 ├── Ecommerce-Backend/
-│   ├── src/main/java/
-│   ├── src/main/resources/
-│   └── pom.xml
-│
 ├── Ecommerce-Frontend/
-│   ├── src/
-│   ├── public/
-│   ├── package.json
-│   └── vite.config.js
-│
 ├── assets/
 │   ├── admin-approved-seller.jpeg
 │   ├── admin-homepage-edit.jpeg
