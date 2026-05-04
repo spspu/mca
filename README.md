@@ -138,5 +138,7 @@ Multivendor-Ecommerce-System/
 
 ![Seller Email Notification After Approved](assets/seller-email-notify-after-approved.png)
 
+![Seller Email Notification After Approved](assets/seller-email-notify-after-approved1.png)
+
 ---
 
