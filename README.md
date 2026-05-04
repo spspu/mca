@@ -1,6 +1,6 @@
 # Multi-Vendor E-commerce Platform
 
-A full-stack **Multi-Vendor E-commerce System** built using **ReactJS** for frontend and **Spring Boot** for backend.
+A full-stack **Multi-Vendor E-commerce Platform** built using **ReactJS** for frontend and **Spring Boot** for backend.
 
 ## Tech Stack
 
