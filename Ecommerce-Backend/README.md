@@ -1,3 +1,3 @@
-### 1. Our All Endpoints
+### 1. All API Endpoints
 
-![Endpoints](assets/swagger-ui.jpeg)
+![Swagger UI](assets/swagger-ui.jpeg)
