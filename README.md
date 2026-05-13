@@ -66,79 +66,85 @@ Multivendor-Ecommerce-System/
 
 ![Dark Theme Home Page](assets/home-dark.jpeg)
 
-### 3. Login Page
-
-![Login Page](assets/login.jpeg)
-
-### 4. Customer Register
+### 3. Customer Register
 
 ![Customer Register](assets/customer-register.jpeg)
 
-### 5. Seller Register
+### 4. Login Page
 
-![Seller Register](assets/seller-register.jpeg)
+![Login Page](assets/login.jpeg)
 
-### 6. Seller Verification
-
-![Seller Verification](assets/seller-verification.jpeg)
-
-### 7. Admin Approved Seller
-
-![Admin Approved Seller](assets/admin-approved-seller.jpeg)
-
-### 8. Admin Homepage Edit
-
-![Admin Homepage Edit](assets/admin-homepage-edit.jpeg)
-
-### 9. Seller Listed Products
-
-![Seller Listed Products](assets/seller-listed-products.jpeg)
-
-### 10. Seller Update Product
-
-![Seller Update Product](assets/seller-update-product.jpeg)
-
-### 11. Customer Adding Product in Cart
-
-![Customer Adding Product in Cart](assets/customer-adding-product-in-cart.jpeg)
-
-### 12. Razorpay Payment Gateway
-
-![Razorpay Payment Gateway](assets/razorpay-payment-gateway.png)
-
-### 13. Razorpay Payment Option
-
-![Razorpay Payment Option](assets/razorpay-payment-option.png)
-
-### 14. Razorpay Payment Processing
-
-![Razorpay Payment Processing](assets/razorpay-payment-processing.png)
-
-### 15. Razorpay Payment ID Generated
-
-![Razorpay Payment ID Generated](assets/razorpay-paymentid-generated.png)
-
-### 16. Website Payment Successful Done
-
-![Website Payment Successful Done](assets/website-payment-successfull-done.png)
-
-### 17. Send Password Reset Link
+### 5. Send Password Reset Link
 
 ![Send Password Reset Link](assets/send-password-reset-link.jpeg)
 
-### 18. Password Reset Link Received
+### 6. Password Reset Link Received
 
 ![Password Reset Link Received](assets/password-reset-link-recieved.png)
 
-### 19. Password Reset Window
+### 7. Password Reset Window
 
 ![Password Reset Window](assets/password-reset-window.jpeg)
 
-### 20. Seller Email Notification After Approved
+
+
+### 8. Seller Register
+
+![Seller Register](assets/seller-register.jpeg)
+
+### 9. Seller Verification Window
+
+![Seller Verification](assets/seller-verification.jpeg)
+
+### 10. Admin Approved Seller
+
+![Admin Approved Seller](assets/admin-approved-seller.jpeg)
+
+### 11. Seller Email Notification After Approved
 
 ![Seller Email Notification After Approved](assets/seller-email-notify-after-approved.png)
 
 ![Seller Email Notification After Approved](assets/seller-email-notify-after-approved1.png)
+
+
+
+
+
+### 12. Admin Homepage Edit
+
+![Admin Homepage Edit](assets/admin-homepage-edit.jpeg)
+
+### 13. Seller Listed Products
+
+![Seller Listed Products](assets/seller-listed-products.jpeg)
+
+### 14. Seller Update Product
+
+![Seller Update Product](assets/seller-update-product.jpeg)
+
+### 15. Customer Adding Product in Cart
+
+![Customer Adding Product in Cart](assets/customer-adding-product-in-cart.jpeg)
+
+### 16. Razorpay Payment Gateway
+
+![Razorpay Payment Gateway](assets/razorpay-payment-gateway.png)
+
+### 17. Razorpay Payment Option
+
+![Razorpay Payment Option](assets/razorpay-payment-option.png)
+
+### 18. Razorpay Payment Processing
+
+![Razorpay Payment Processing](assets/razorpay-payment-processing.png)
+
+### 19. Razorpay Payment ID Generated
+
+![Razorpay Payment ID Generated](assets/razorpay-paymentid-generated.png)
+
+### 20. Website Payment Successful Done
+
+![Website Payment Successful Done](assets/website-payment-successfull-done.png)
 
 ---
 
